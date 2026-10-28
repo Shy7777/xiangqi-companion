@@ -1,0 +1,25 @@
+name: macOS source checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: macos-15
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check public file boundaries
+        run: bash scripts/check-publication.sh
+      - name: Build GUI without bundled engine or books
+        run: bash build.sh
+      - name: Run offline regression tests
+        run: bash verify.sh

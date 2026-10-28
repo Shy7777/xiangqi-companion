@@ -1,0 +1,44 @@
+# Local builds and compiler scratch
+build/
+.build/
+tmp/
+.cache/
+.DS_Store
+*.dSYM/
+
+# Never publish personal study data or source snapshots
+Backups/
+private/
+local-data/
+learning*.json
+shelf*.json
+session*.json
+*.cbl
+*.CBL
+*.cbr
+*.CBR
+*.xqf
+*.XQF
+*.pdf
+*.nnue
+*.onnx
+*.app/
+*.zip
+*.tar
+*.tar.gz
+*.dmg
+*.pkg
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.mobileprovision
+
+# Generated research executables are not source documentation
+Docs/real-game-research/inspect-positions
+Docs/real-game-research/systematic-content-tests
+Docs/real-game-research/validate-curriculum
+Docs/real-game-research/validate-games
